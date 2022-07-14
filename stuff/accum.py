@@ -3,9 +3,9 @@ class Accumulator:
         self._count = 0
 
 #Adding getters and setters
-@property
-def count(self):
-    return self._count
+    @property
+    def count(self):
+        return self._count
 
-def add(self, more=1):
-    self._count += more
+    def add(self, more=1):
+        self._count += more
