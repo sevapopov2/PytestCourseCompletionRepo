@@ -1,8 +1,11 @@
 import pytest
+#Creating custom math marker for each test
+@pytest.mark.math
 def test_one_plus_one():
     assert 1 + 1 == 2
 
 #Testcase with failure
+@pytest.mark.math
 def test_one_plus_two():
     a = 1
     b = 2
@@ -10,6 +13,7 @@ def test_one_plus_two():
     assert a + b == c
 
 #Test with exception
+@pytest.mark.math
 def test_divide_by_zero():
     with pytest.raises(ZeroDivisionError) as e:
         num = 1 / 0
@@ -27,6 +31,7 @@ products = [
 ]
 
 #Creating a parameterized testcase
+@pytest.mark.math
 @pytest.mark.parametrize('a, b, product', products)
 def test_multiplication(a, b, product):
     assert a * b == product
